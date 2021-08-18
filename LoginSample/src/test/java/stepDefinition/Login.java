@@ -47,7 +47,7 @@ public class Login {
 		// Click on the login Button
 		driver.findElement(By.xpath("//*[@id='login']/button")).click();
 		// Call take screenshot function for first time
-		takeScreenShot("vaildUser");
+		takeScreenShot("vaildUser"+System.currentTimeMillis());
 		driver.close();
 	}
 
@@ -81,7 +81,7 @@ public class Login {
 		// Click on the login Button
 		driver.findElement(By.xpath("//*[@id='login']/button")).click();
 		// Call take screenshot function for first time
-		takeScreenShot("invaildUser");
+		takeScreenShot("invaildUser"+System.currentTimeMillis());
 		driver.close();
 
 	}
@@ -92,10 +92,8 @@ public class Login {
 		// Take a screenshot and store it as file
 		File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		// Copy the Screenshot to desired location using copyfile method:
-		if (fileName.equalsIgnoreCase("vaildUser"))
-			Files.copy(file, new File("/Users/vamsi/eclipse-workspace/LoginSample/target/ScreenShots/vaildUser.jpg"));
-		else if (fileName.equalsIgnoreCase("invaildUser"))
-			Files.copy(file, new File("/Users/vamsi/eclipse-workspace/LoginSample/target/ScreenShots/invaildUser.jpg"));
+			Files.copy(file, new File("/Users/vamsi/eclipse-workspace/LoginSample/target/ScreenShots/"+fileName+".jpg"));
+	
 
 	}
 }
