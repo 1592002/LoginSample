@@ -92,7 +92,7 @@ public class Login {
 		// Take a screenshot and store it as file
 		File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		// Copy the Screenshot to desired location using copyfile method:
-			Files.copy(file, new File("/Users/vamsi/eclipse-workspace/LoginSample/target/ScreenShots/"+fileName+".jpg"));
+			Files.copy(file, new File("/Users/vamsi/LoginSample/LoginSample/target/ScreenShots/"+fileName+".jpg"));
 	
 
 	}
